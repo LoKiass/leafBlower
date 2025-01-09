@@ -20,6 +20,8 @@ Ce jeu vous plonge dans un monde où vous utilisez divers outils pour "souffler"
 - Code de hitbox pour un souffleur
 - Modulable pour plusieurs future blower
 
+### Versions 1.0.1 : Créations minim du Spawn leaf area
+
 ## Contribuer
 
 Les contributions sont les bienvenues ! Si vous avez des idées ou souhaitez participer au développement, n'hésitez pas à :

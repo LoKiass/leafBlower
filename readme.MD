@@ -22,6 +22,11 @@ Ce jeu vous plonge dans un monde où vous utilisez divers outils pour "souffler"
 
 ### Versions 1.0.1 : Créations minim du Spawn leaf area
 
+### Versions 1.2 : Rajout de Earning Zone, leaf, etc
+- Problème connue : Stat non geré coté serveur 
+- minLeaf non gerer lors de la supressions d'une feuille 
+- Gros problème online
+
 ## Contribuer
 
 Les contributions sont les bienvenues ! Si vous avez des idées ou souhaitez participer au développement, n'hésitez pas à :

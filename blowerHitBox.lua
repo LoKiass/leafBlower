@@ -1,27 +1,30 @@
-local blowerHitBox = Instance.new("Part") -- Creation d'un object près du joueur
-local Players = game:GetService("Players") -- Recuperer le service joueur
-blowerHitBox.Transparency = 0 -- Paramètre de transparence de la hitbox
-blowerHitBox.BrickColor = BrickColor.new("Really red") -- Manière actuelle de verifier ou la hitbox ce promènne
-blowerHitBox.Parent = workspace 
-blowerHitBox.Anchored = true -- Pour que le bloc grade des position X,Y,Z stable
-blowerHitBox.CanCollide = false -- Manière de ne pas collide avec le joueurs
+local Players = game:GetService("Players")
+local groundLevelY = 0
 
 Players.PlayerAdded:Connect(function(player)
 	player.CharacterAdded:Connect(function(character)
-		local humanoidRootPart = character:WaitForChild("HumanoidRootPart") -- Recuper les partie du joueur 
-		local humanoid = character:WaitForChild("Humanoid") -- Recuper l'object humanoid 
+		local blowerHitBox = Instance.new("Part")
+		blowerHitBox.Transparency = 0
+		blowerHitBox.BrickColor = BrickColor.new("Really red")
+		blowerHitBox.Name = "blowerHitBox"
+		blowerHitBox.Parent = workspace
+		blowerHitBox.Anchored = true
+		blowerHitBox.CanCollide = true
+		blowerHitBox.Size = Vector3.new(3, 2, 3)
 
-		while humanoidRootPart and humanoid.Health > 0 do -- Si est en vie et que humanoidRootPart existe
-			local lookDirection = humanoidRootPart.CFrame.LookVector 
-			local newPosition = humanoidRootPart.Position + lookDirection * 5 
+		local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+		local humanoid = character:WaitForChild("Humanoid")
+
+		while humanoidRootPart and humanoid.Health > 0 do
+			local lookDirection = humanoidRootPart.CFrame.LookVector
+			local newPosition = humanoidRootPart.Position + lookDirection * 6
+
+			newPosition = Vector3.new(newPosition.X, groundLevelY, newPosition.Z)
 
 			blowerHitBox.Position = newPosition
-			blowerHitBox.CFrame = CFrame.new(newPosition, newPosition + lookDirection) 
-			
+			blowerHitBox.CFrame = CFrame.new(newPosition, newPosition + lookDirection)
+
 			task.wait(0) 
 		end
 	end)
 end)
-
--- EN/US : Problem to solve : 
--- Refresh time is very low, any optimisation for the code ?

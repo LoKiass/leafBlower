@@ -32,6 +32,11 @@ Ce jeu vous plonge dans un monde où vous utilisez divers outils pour "souffler"
 - Rajout des types de blower 
 - HitBlox du blower passer en côter locale pour les raisons de problème online
 
+### Versions 1.4
+- Ajout d'un systeme d'inventaire en GUI
+- Ajout d'un systeme de Item shop en GUI
+- Code de blowerhitbox optimisé seulement pour qu'il calcule la hitbox au login du player
+- Problème avec le nombre de feuille qui spawn
 
 ## Contribuer
 

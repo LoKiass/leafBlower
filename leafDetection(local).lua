@@ -1,8 +1,14 @@
+-- Script local s'occupant de la collisions entre la zone de collisions du Blower et les feuilles
 local Players = game:GetService("Players")
 local leafFolder = game.Workspace:WaitForChild("leafFolderPart")
 local blowerHitBox = game.Workspace:WaitForChild("blowerHitBox")
+
 local debounce = false
-local earningArea = game.Workspace:WaitForChild("earningArea")
+
+local earningArea = game.Workspace.Area:WaitForChild("earningArea")
+
+local leafSuprresion = game.Workspace.leafFolderPart:WaitForChild("actualLeaf") -- Instance calculer par plusieurs script pour mettre à jours le nombre de feuille
+
 
 function leafOnEarningArea()
 	for _, leaf in ipairs(leafFolder:GetChildren()) do
@@ -11,6 +17,7 @@ function leafOnEarningArea()
 				if hit == earningArea then
 					if debounce == false then
 						debounce = true
+						leafSuprresion.Value = leafSuprresion.Value - 1
 						leaf:Destroy()
 						getStat()
 						debounce = false
@@ -38,6 +45,8 @@ function checkColisionWithBlower()
 		end
 	end
 end
+
+-- Recuper les stat du joueur au nécesaire et de les mettres à jours
 function getStat()
 	local player = Players.LocalPlayer
 	local leaderstats = player:WaitForChild("leaderstats")

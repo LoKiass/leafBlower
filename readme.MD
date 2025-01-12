@@ -27,6 +27,12 @@ Ce jeu vous plonge dans un monde où vous utilisez divers outils pour "souffler"
 - minLeaf non gerer lors de la supressions d'une feuille 
 - Gros problème online
 
+### Versions 1.3 : 
+- Rajoute d'un bouton pour obtenir un nouveau blower --> Faire un future menue
+- Rajout des types de blower 
+- HitBlox du blower passer en côter locale pour les raisons de problème online
+
+
 ## Contribuer
 
 Les contributions sont les bienvenues ! Si vous avez des idées ou souhaitez participer au développement, n'hésitez pas à :

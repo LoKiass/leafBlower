@@ -1,4 +1,5 @@
-game.Players.PlayerAdded:Connect(function(player) -- stat du joueur :
+-- Script pout les stats du joueur (nombre actuel de feuille)
+game.Players.PlayerAdded:Connect(function(player) 
 	local leaderstat = Instance.new("Folder")
 	leaderstat.Name = "leaderstats"
 	leaderstat.Parent = player
